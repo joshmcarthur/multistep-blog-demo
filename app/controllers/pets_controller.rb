@@ -17,10 +17,6 @@ class PetsController < ApplicationController
     @pet = Pet.new
   end
 
-  # GET /pets/1/edit
-  def edit
-  end
-
   # POST /pets
   # POST /pets.json
   def create
@@ -38,17 +34,9 @@ class PetsController < ApplicationController
   end
 
   # PATCH/PUT /pets/1
-  # PATCH/PUT /pets/1.json
-  def update
-    respond_to do |format|
-      if @pet.update(pet_params)
-        format.html { redirect_to @pet, notice: 'Pet was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @pet.errors, status: :unprocessable_entity }
-      end
-    end
+    @pet = Pet.new
+    @pet.save(validate: false)
+    redirect_to pet_step_path(@pet, Pet.form_steps.first)
   end
 
   # DELETE /pets/1
