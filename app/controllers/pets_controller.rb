@@ -20,20 +20,6 @@ class PetsController < ApplicationController
   # POST /pets
   # POST /pets.json
   def create
-    @pet = Pet.new(pet_params)
-
-    respond_to do |format|
-      if @pet.save
-        format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @pet }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @pet.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /pets/1
     @pet = Pet.new
     @pet.save(validate: false)
     redirect_to pet_step_path(@pet, Pet.form_steps.first)
