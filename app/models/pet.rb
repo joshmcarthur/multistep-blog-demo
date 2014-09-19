@@ -6,7 +6,7 @@ class Pet < ActiveRecord::Base
   attr_accessor :form_step
 
   validates :name, :owner_name, presence: true, if: -> { required_for_step?(:identity) }
-  validates :identifying_characteristics, presence: true, if: -> { required_for_step?(:characteristics) }
+  validates :identifying_characteristics, :colour, presence: true, if: -> { required_for_step?(:characteristics) }
   validates :special_instructions, presence: true, if: -> { required_for_step?(:instructions) }
 
   def required_for_step?(step)
