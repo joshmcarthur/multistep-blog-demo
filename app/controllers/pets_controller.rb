@@ -4,7 +4,9 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.json
   def index
-    @pets = Pet.all
+    # Normally you'd have more complex requirements about
+    # when not to show rows, but we don't show any records that don't have a name
+    @pets = Pet.where.not(name: nil)
   end
 
   # GET /pets/1
