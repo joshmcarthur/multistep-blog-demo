@@ -22,7 +22,6 @@
         <td><%= pet.owner_name %></td>
         <td><%= simple_format pet.identifying_characteristics %></td>
         <td><%= simple_format pet.special_instructions %></td>
-        <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

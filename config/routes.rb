@@ -1,5 +1,5 @@
 PetThing::Application.routes.draw do
-  resources :pets, only: [:new, :create, :show, :index] do
+  resources :pets, only: [:new, :create, :index, :destroy] do
     resources :steps, only: [:show, :update], controller: 'pet/steps'
   end
 
