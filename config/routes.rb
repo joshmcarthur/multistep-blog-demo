@@ -1,5 +1,8 @@
 PetThing::Application.routes.draw do
-  resources :pets
+  get "steps/show"
+  get "steps/update"
+  resources :pets, only: [:new, :create, :show, :index]
+  root to: 'pets#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
