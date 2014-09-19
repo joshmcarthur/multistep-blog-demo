@@ -20,7 +20,7 @@ class Pet::StepsController < ApplicationController
                            when "identity"
                              [:name, :owner_name]
                            when "characteristics"
-                             [:colour, :special_characteristics]
+                             [:colour, :identifying_characteristics]
                            when "instructions"
                              [:special_instructions]
                            end
