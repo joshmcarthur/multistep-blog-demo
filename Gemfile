@@ -7,6 +7,7 @@ gem 'rails', '4.0.5'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
+gem 'jquery-rails'
 
 
 gem 'wicked'
